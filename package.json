@@ -16,6 +16,7 @@
     "vite-plugin-glsl": "^1.2.1"
   },
   "devDependencies": {
+    "@types/stats.js": "^0.17.3",
     "@types/three": "^0.160.0",
     "sass": "^1.70.0",
     "typescript": "^5.3.3",

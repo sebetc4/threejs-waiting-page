@@ -22,6 +22,9 @@ dependencies:
     version: 1.2.1(vite@5.0.12)
 
 devDependencies:
+  '@types/stats.js':
+    specifier: ^0.17.3
+    version: 0.17.3
   '@types/three':
     specifier: ^0.160.0
     version: 0.160.0
