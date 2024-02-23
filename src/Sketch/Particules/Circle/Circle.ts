@@ -13,7 +13,7 @@ import { Time } from '../../utils'
 
 export class Circle {
 
-    readonly PARTICULE_RESOLUTION = 258
+    readonly PARTICULE_RESOLUTION = 128
     readonly PARTICULE_COUNT = this.PARTICULE_RESOLUTION ** 2
 
     // Scene

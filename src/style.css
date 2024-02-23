@@ -7,16 +7,17 @@
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #111210;
-  min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111210;
+    height: 100vh;
+    overflow: hidden;
 }
 
 #webgl-container {
-  width: 100%;
-  max-width: 1920px;
-  height: 100vh;
-  max-height: 1080px;
+    width: 100%;
+    max-width: 1920px;
+    aspect-ratio: 16/9;
+    max-height: 1080px;
 }

@@ -40,10 +40,10 @@ export class GPGPU {
         for (const gpuRenderer of this.gpuRenderers) {
             this.renderer.setRenderTarget(gpuRenderer.renderTarget)
             this.renderer.render(gpuRenderer.scene, this.camera)
-            this.renderer.setRenderTarget(null)
             gpuRenderer.material.uniforms[gpuRenderer.variable].value = gpuRenderer.renderTarget.texture
             this.swapRenderTargets(gpuRenderer)
         }
+        this.renderer.setRenderTarget(null)
     }
 
     swapRenderTargets(gpuRenbderer: GPGPURenderer) {

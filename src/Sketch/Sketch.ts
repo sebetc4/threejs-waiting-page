@@ -61,6 +61,7 @@ export class Sketch {
         this.debug?.stats.begin()
         this.particules.update()
         this.renderer.update()
+        this.gpgpu.update()
         this.debug?.stats.end()
     }
 

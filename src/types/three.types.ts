@@ -7,3 +7,8 @@ export type GPGPURenderer = {
     renderTarget: WebGLRenderTarget
     renderTarget2: WebGLRenderTarget
 }
+
+export type PixelData = {
+    x: number
+    y: number
+}

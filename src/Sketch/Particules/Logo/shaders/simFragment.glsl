@@ -1,5 +1,5 @@
 uniform float uTime;
-uniform float uLogoMix;
+uniform float uLogoTextMix;
 uniform sampler2D uPositions;
 uniform sampler2D uLogoPositions;
 uniform sampler2D uTextPositions;
@@ -16,12 +16,11 @@ float rand(vec2 co){
 }
 
 void main() {
-
     vec2 position = texture2D(uPositions, vUv).xy;
     vec2 logoPosition = texture2D(uLogoPositions, vUv).xy;
     vec2 textPosition = texture2D(uTextPositions, vUv).xy;
 
-    vec2 finalPosition = mix(logoPosition, textPosition, uLogoMix);
+    vec2 finalPosition = mix(logoPosition, textPosition, uLogoTextMix);
 
 
     float offsetLife = rand(vUv);
@@ -44,13 +43,12 @@ void main() {
     }
 
     float lifespan = 2.;
-    float age = mod (uTime + lifespan * offsetLife, lifespan);
-    if (age < 0.05) {
+    float age = mod(uTime * 6. + lifespan * offsetLife, lifespan);
+    if (age < 0.1) {
         velocity = vec2(0.0001, 0.0001);
         position.xy = finalPosition;
     }
 
-    // add velocity to position
     position.xy += velocity;
 
     gl_FragColor = vec4(position, velocity);

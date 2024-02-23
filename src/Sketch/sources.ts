@@ -1,6 +1,6 @@
 import { Sources } from '../types'
 
-export const sourceNames = ['logo', 'text'] as const
+export const sourceNames = ['logo', 'text-fr', 'text-en'] as const
 
 export const sourceTypes = ['pixelData'] as const
 
@@ -11,8 +11,13 @@ export const sources: Sources = [
         path: '/textures/logo.jpg',
     },
     {
-        name: 'text',
+        name: 'text-fr',
         type: 'pixelData',
-        path: '/textures/text.jpg',
+        path: '/textures/text-fr.jpg',
+    },
+    {
+        name: 'text-en',
+        type: 'pixelData',
+        path: '/textures/text-en.jpg',
     },
 ]

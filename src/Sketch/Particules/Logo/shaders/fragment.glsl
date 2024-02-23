@@ -1,5 +1,9 @@
 uniform float uAlpha; 
+uniform vec3 uLogoColor;
+uniform vec3 uTextColor;
+uniform float uLogoTextMix;
 
 void main() {
-    gl_FragColor = vec4(1.0, 1.0, 1.0, uAlpha );
+    vec3 color = mix(uLogoColor, uTextColor, uLogoTextMix);
+    gl_FragColor = vec4(color, uAlpha);
 }
