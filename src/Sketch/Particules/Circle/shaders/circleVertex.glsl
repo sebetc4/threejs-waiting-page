@@ -8,5 +8,5 @@ void main() {
     vec4 mvPos = modelViewMatrix * vec4(pos.xy, 0., 1.);
 
     gl_Position = projectionMatrix * mvPos;
-    gl_PointSize = .8;
+    gl_PointSize = 1.;
 }

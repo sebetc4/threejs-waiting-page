@@ -14,7 +14,7 @@ void main() {
 
     float circularStrength = 1.0 - smoothstep(0.5, 1.0, abs(pos.x - radius));
 
-    float angle = atan(pos.y, pos.x) - random.y * mix(0.5 , 1.0, circularStrength) *  0.1;
+    float angle = atan(pos.y, pos.x) - random.y * mix(0.5 , 1.0, circularStrength) *  0.08;
     
     float targetRadius = mix(random.x, 3.0, 0.5 + 0.45 * sin(angle * 2.0 + 1.2));
 
