@@ -1,10 +1,12 @@
 uniform sampler2D uPositions;
+uniform float uTime;
+varying vec4 vColor;
 
 varying vec2 vUv;
 
 void main() {
     vUv = uv;
-    vec4 pos = texture2D(uPositions, vUv);    
+    vec4 pos = texture2D(uPositions, vUv);
     vec4 mvPos = modelViewMatrix * vec4(pos.xy, 0., 1.);
 
     gl_Position = projectionMatrix * mvPos;

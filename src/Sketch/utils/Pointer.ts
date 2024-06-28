@@ -15,7 +15,7 @@ export class Pointer extends EventEmitter {
         this.sizes = this.sketch.sizes
         this.raycaster = new THREE.Raycaster()
         this.mouse = new THREE.Vector2()
-        this.position = new THREE.Vector2(-10, -10)
+        this.position = new THREE.Vector2(-99, -99)
         this.setPlaneMesh()
         this.initEventListener()
     }
@@ -25,7 +25,7 @@ export class Pointer extends EventEmitter {
     }
 
     initEventListener() {
-        window.addEventListener('mousemove', (event) => this.onMouseMove(event), false)
+        window.addEventListener('pointermove', (event) => this.onMouseMove(event), false)
     }
 
     onMouseMove(event: MouseEvent) {
@@ -41,6 +41,6 @@ export class Pointer extends EventEmitter {
     }
 
     destroy() {
-        window.removeEventListener('mousemove', (event) => this.onMouseMove(event), false)
+        window.removeEventListener('pointermove', (event) => this.onMouseMove(event), false)
     }
 }

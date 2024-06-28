@@ -52,7 +52,7 @@ export class Circle {
                 uTime: { value: 0 },
                 uDeltaTime: { value: this.time.delta },
                 uPointer: { value: this.sketch.pointer.position },
-                uRandoms: { value: this.randoms }
+                uRandoms: { value: this.randoms },
             },
         })
         this.simUniforms = this.sketch.gpgpu.getSimUniforms(this.PARTICULE_RESOLUTION, material, 'uPositions')

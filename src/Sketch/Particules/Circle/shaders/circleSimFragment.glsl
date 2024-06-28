@@ -3,6 +3,7 @@ uniform sampler2D uPositions;
 uniform sampler2D uRandoms;
 uniform float uTime;
 uniform float uDeltaTime;
+uniform vec2 uPointer;
 varying vec2 vUv;
 
 void main() {
@@ -25,6 +26,10 @@ void main() {
     pos.xy += (targetPos.xy - pos.xy) * 0.1;
 
     pos.xy += curl(pos.xyz * 4.0, uTime * 0.001, 0.1).xy * 0.004;
+
+    float dist = length(pos.xy - uPointer);
+	vec2 dir = normalize(pos.xy - uPointer);
+	pos.xy += dir * 0.1 * smoothstep(0.2,0.0,dist);
 
     gl_FragColor = pos;
 }

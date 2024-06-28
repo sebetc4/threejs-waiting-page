@@ -6,7 +6,7 @@ import { Debug, Sizes, Time, Resources, Pointer } from './utils'
 import { GPGPU } from './GPGPU'
 
 export class Sketch {
-    readonly PARTICULES_RESOLUTION = 252
+    readonly PARTICULES_RESOLUTION = 1024
     readonly PARTICULES_COUNT = this.PARTICULES_RESOLUTION ** 2
     // Modes
     readonly debugIsActive = window.location.hash === '#debug'

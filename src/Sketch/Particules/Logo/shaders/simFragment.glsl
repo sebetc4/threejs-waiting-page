@@ -44,7 +44,7 @@ void main() {
 
     float lifespan = 2.;
     float age = mod(uTime * 6. + lifespan * offsetLife, lifespan);
-    if (age < 0.1) {
+    if (age < 0.05) {
         velocity = vec2(0.0001, 0.0001);
         position.xy = finalPosition;
     }

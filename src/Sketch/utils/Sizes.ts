@@ -9,7 +9,6 @@ export class Sizes extends EventEmitter {
     
     constructor(private container: HTMLDivElement) {
         super()
-        console.log(this.container)
         this.width = this.container.offsetWidth
         this.height = this.container.offsetHeight
         this.offsetLeft = this.container.offsetLeft

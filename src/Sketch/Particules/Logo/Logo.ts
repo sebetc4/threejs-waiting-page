@@ -10,16 +10,16 @@ import { PixelData, PixelDataImage } from '../../../types'
 export class Logo {
     readonly PARICULE_RESOLUTION = 256
     readonly PARTICULE_COUNT = this.PARICULE_RESOLUTION ** 2
-    readonly DELAY_BETWEEN_ANIMATIONS = 10
-    readonly ANIMATION_DURATION = 2
+    readonly DELAY_BETWEEN_ANIMATIONS = 12
+    readonly ANIMATION_DURATION = 0.5
     readonly SIZE = 4
 
     parameters = {
-        friction: 0.9,
+        friction: 0.96,
         mouseEffectDistance: 0.2,
         mouseEffectStrength: 0.005,
-        attractionStrength: 0.0005,
-        alphaParticules: 0.8,
+        attractionStrength: 0.0002,
+        alphaParticules: 0.9,
     }
 
     // Scene
@@ -144,6 +144,11 @@ export class Logo {
                 const i4 = (y * this.PARICULE_RESOLUTION + x) * 4
 
                 const randomPixel = pixelData[Math.floor(Math.random() * pixelData.length)]
+
+                if (Math.random() < 0.02) {
+                    randomPixel.x = (Math.random() - 0.5) * 2
+                    randomPixel.y = (Math.random() - 0.5) * 2
+                }
 
                 data[i4] = (randomPixel.x + (Math.random() - 0.5) * 0.006) * this.SIZE
                 data[i4 + 1] = (randomPixel.y + (Math.random() - 0.5) * 0.006) * this.SIZE
